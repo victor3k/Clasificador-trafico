@@ -1,5 +1,11 @@
 # Clasificador_DPU
 
+Entrenar modelo:
+
+Quantizar modelo:
+
+Compilar modelo:
+
 Ejecutar modelo en DPU:
 
 Subir archivo .xmodel, subir carpeta comprimida con imágenes de test y descomprimirla.
