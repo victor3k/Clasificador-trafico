@@ -3,17 +3,20 @@
 Filtrar datos:
 Primero hay que guardar las capturas pcap en una carpeta llamada "capturas_pcap"
 >> bash script_filtrarV2.sh
+
 FALTA Revisar filtro: filtra demasiado, limitar a quitar puertos bien conocidos y señalización TCP.
 Salida carpeta llamada "capturas_pcap_filtradas"
 
 Convertir de captura de tráfico a archivo binario por paquete:
->> bash script_pkt_to_txt 
+>> bash script_pkt_to_txt.sh
+
 (usa el ejecutable "analizador" obtenido de compilar analizador.c)
 Salida: para cada captura pcap una carpeta con su nombre y dentro subcarpetas por flujos que contienen los paquetes de tráfico binarios.
 OJO en algún caso puede que se haga referencia a archivos .txt en vez de .bin
 
 Convertir paquete a imagen:
 >> bash script_bin2img.sh capturas_pcap_filtradas/
+
 (usa el python binary2image.py)
 Salida: genera dos subcarpetas para cada flujo que contienen las imágenes en 1D y 2D
 
