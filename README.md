@@ -14,13 +14,17 @@ Convertir de captura de tráfico a archivo binario por paquete:
 Salida: para cada captura pcap una carpeta con su nombre y dentro subcarpetas por flujos que contienen los paquetes de tráfico binarios.
 OJO en algún caso puede que se haga referencia a archivos .txt en vez de .bin
 
+Se puede cambiar la variable tam_img = 1024 para cambiar los píxeles de la imagen final. La variable suma_cabecera determina si se quitan o se mantienen las cabeceras ETH,IP,UDP/TCP.
+
 Convertir paquete a imagen:
 >> bash script_bin2img.sh capturas_pcap_filtradas/
 
 (usa el python binary2image.py)
-Salida: genera dos subcarpetas para cada flujo que contienen las imágenes en 1D y 2D
+Salida: genera dos subcarpetas para cada flujo que contienen las imágenes en 1D y 2D.
 
-Si se desea elimnar los archivos binarios (no los procesa la Red neuronal) se puede usar script_filtrar.sh
+Para cambiar el tamaño de las imágenes se cambia el retorno de la funciones get_size y get_size2d. Predeterminado a 1024 px 1D u 32 x 32 px en 2D.
+
+Si se desea elimnar los archivos binarios (no los procesa la Red neuronal) se puede usar script_filtrar.sh.
 
 # Modelo CNN LSTM
 modelo_CNN_LSTM.py
@@ -33,6 +37,8 @@ El modelo propuesto son dos capas CNN luego 2 capas LSTM y después dos capas De
 
 Resultados en mediadas de rendimiento accuracy y loss + Confusion Matrix + Classification Report para comparar resultados por clases.
 Por último hay medidas de rendimiento de FPS y Latencia por imagen para comparar con DPU.
+
+OJO Cambiar las rutas. Para cambiar entre modelo 1D y 2D se usa la variable "dir_dimension" {1Dimension, 2Dimension}. Para cambiar entre los píxeles de entrada se usa "píxeles"
 
 # Clasificador_DPU
 FALTA documentar
